@@ -11,7 +11,7 @@ func main(){
 	router := gin.Default()
 
 	router.GET("",test_api)
-	router.GET("/welcome",welcome_test)
+	router.GET("/welcome/:name",welcome_test)
 	router.Run(":8080")
 }
 
@@ -22,7 +22,8 @@ func test_api(c *gin.Context){
 }
 
 func welcome_test(c *gin.Context){
+	name:= c.Param("name")
 	c.JSON(http.StatusOK,gin.H{
-		"message":"WELCOME TO API.....UNDER CONSTRUCTION..........",
+		"message":"WELCOME "+name+" TO API.....UNDER CONSTRUCTION..........",
 	})
 }
