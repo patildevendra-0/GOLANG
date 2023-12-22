@@ -10,6 +10,7 @@ import (
 func RouterStarter()*gin.Engine{
 
 	router := gin.Default()
+	
 	router.GET("/",controllers.Welcome)
 	router.POST("/user/create",controllers.CreateNewUser)
 	router.GET("/users",controllers.GetAllUsers)
