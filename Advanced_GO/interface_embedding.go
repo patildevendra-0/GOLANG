@@ -1,6 +1,10 @@
 package main
 
-type Printer 
+type Printer interface{
+	Print()
+}
+
+type 
 
 func main(){
 
